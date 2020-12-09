@@ -3,6 +3,8 @@
 namespace GuzzleLogMiddleware;
 
 class GuzzleLogMiddleware {
+    const VERSION = '0.0.1';
+
     private $services = [];
 
     function __construct(array $servicesAndOptions = [])
