@@ -1,0 +1,30 @@
+{
+    "name": "daunoanove/guzzle-log-middleware",
+    "description": "",
+    "keywords": [],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Vittorio Malaspina",
+            "email": "vittorio.malaspina@gmail.com",
+            "role": "Developer"
+        }
+    ],
+	"autoload": {
+        "psr-4": {
+            "GuzzleLogMiddleware\\": "src/"
+        }
+    },
+    "require": {
+        "php": "~7.0",
+        "laminas/laminas-cache": "3.0.x-dev",
+        "guzzlehttp/guzzle": "^7.0",
+        "laminas/laminas-serializer": "^2.9@dev",
+        "symfony/cache": "5.x-dev",
+        "monolog/monolog": "^2.0@dev"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "*"
+    },
+    "minimum-stability": "dev"
+}
