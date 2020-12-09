@@ -16,12 +16,7 @@
         }
     },
     "require": {
-        "php": "~7.0",
-        "laminas/laminas-cache": "3.0.x-dev",
-        "guzzlehttp/guzzle": "^7.0",
-        "laminas/laminas-serializer": "^2.9@dev",
-        "symfony/cache": "5.x-dev",
-        "monolog/monolog": "^2.0@dev"
+        "php": "~7.0"
     },
     "require-dev": {
         "phpunit/phpunit": "*"
