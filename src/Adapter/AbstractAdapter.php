@@ -9,7 +9,7 @@ abstract class AbstractAdapter implements AdapterInterface {
     function __construct($service, array $options = [])
     {
         $this->service = $service;
-        $this->options = \GuzzleLogMiddleware\Normalize\Service\Options::normalize($options);
+        $this->options = \GuzzleLogMiddleware\Normalize\Adapter\Options::normalize($options);
 
         if ( is_null($this->options['template']) )
         {

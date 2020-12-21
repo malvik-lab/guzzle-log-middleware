@@ -2,16 +2,16 @@
 
 namespace GuzzleLogMiddleware\Normalize;
 
-class ServiceAndOptions {
+class AdapterAndOptions {
     public static function normalize($serviceAndOptions): array
     {
         $return = [];
 
         if ( is_array($serviceAndOptions) )
         {
-            if ( array_key_exists('service', $serviceAndOptions) )
+            if ( array_key_exists('adapter', $serviceAndOptions) )
             {
-                $return['service'] = $serviceAndOptions['service'];
+                $return['adapter'] = $serviceAndOptions['adapter'];
 
                 if ( array_key_exists('options', $serviceAndOptions) AND is_array($serviceAndOptions['options']) )
                 {
@@ -19,6 +19,8 @@ class ServiceAndOptions {
                 } else {
                     $return['options'] = [];
                 }
+            } else {
+                $return['adapter'] = null;
             }
         }
 
