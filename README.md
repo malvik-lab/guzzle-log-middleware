@@ -90,6 +90,7 @@ $adapter = [
 ## Usage
 ```php
 // In the constructor you can inject one or more adapters
+
 $guzzleLogMiddleware = new \GuzzleLogMiddleware\GuzzleLogMiddleware([
     $adapter
 ]);
