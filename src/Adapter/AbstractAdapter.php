@@ -3,12 +3,12 @@
 namespace GuzzleLogMiddleware\Adapter;
 
 abstract class AbstractAdapter implements AdapterInterface {
-    public $service;
+    public $adapter;
     public $options;
 
-    function __construct($service, array $options = [])
+    function __construct($adapter, array $options = [])
     {
-        $this->service = $service;
+        $this->adapter = $adapter;
         $this->options = \GuzzleLogMiddleware\Normalize\Adapter\Options::normalize($options);
 
         if ( is_null($this->options['template']) )

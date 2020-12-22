@@ -21,8 +21,8 @@ class Cache extends \GuzzleLogMiddleware\Adapter\AbstractAdapter {
             $key = sprintf('%s%s', $this->options['keyPrefix'], $key);
         }
 
-        $item = $this->service->getItem($key);
+        $item = $this->adapter->getItem($key);
         $item->set($content);
-        $this->service->save($item);
+        $this->adapter->save($item);
     }
 }

@@ -3,9 +3,9 @@
 namespace GuzzleLogMiddleware\Adapter;
 
 class FileSystem extends \GuzzleLogMiddleware\Adapter\AbstractAdapter {
-    function __construct($service, array $options = [])
+    function __construct($adapter, array $options = [])
     {
-        parent::__construct($service, $options);
+        parent::__construct($adapter, $options);
 
         if ( is_null($this->options['dirPath']) AND is_null($this->options['filePath']) )
         {
