@@ -104,7 +104,6 @@ $client = new \GuzzleHttp\Client([
 ```
 
 ## Output Example
-#### With Filesystem
 ```
 >>>>>>>>
 POST /app/login HTTP/1.1
