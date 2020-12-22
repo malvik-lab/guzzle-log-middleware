@@ -70,7 +70,8 @@ $adapter = [
 $adapter = [
     'adapter' => 'filesystem',
     'options' => [
-        'dirPath' => '/path/to/log/folder'
+        'dirPath' => '/path/to/log/folder',
+        'template' => \GuzzleHttp\MessageFormatter::CLF, // Not required. For more information: https://github.com/guzzle/guzzle/blob/master/src/MessageFormatter.php
     ]
 ];
 ```
@@ -82,7 +83,8 @@ $adapter = [
 $adapter = [
     'adapter' => 'filesystem',
     'options' => [
-        'filePath' => '/path/to/log/file.log'
+        'filePath' => '/path/to/log/file.log',
+        'template' => \GuzzleHttp\MessageFormatter::CLF, // Not required. For more information: https://github.com/guzzle/guzzle/blob/master/src/MessageFormatter.php
     ]
 ];
 ```
