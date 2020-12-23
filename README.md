@@ -23,7 +23,7 @@ $log = new \Laminas\Log\PsrLoggerAdapter($laminasLogLogger);
 $adapter = [
     'adapter' => $log,
     'options' => [
-        'template' => \GuzzleHttp\MessageFormatter::CLF, // Not required. For more information: https://github.com/guzzle/guzzle/blob/master/src/MessageFormatter.php
+        'template' => \GuzzleHttp\MessageFormatter::CLF, // Not mandatory. For more information: https://github.com/guzzle/guzzle/blob/master/src/MessageFormatter.php
     ]
 ];
 ```
@@ -57,8 +57,8 @@ $cache = new \Laminas\Cache\Psr\CacheItemPool\CacheItemPoolDecorator($storage);
 $adapter = [
     'adapter' => $cache,
     'options' => [
-        'keyPrefix' => 'my-redis-key-prefix', // Not required
-        'template' => \GuzzleHttp\MessageFormatter::CLF, // Not required. For more information: https://github.com/guzzle/guzzle/blob/master/src/MessageFormatter.php
+        'keyPrefix' => 'my-redis-key-prefix', // Not mandatory
+        'template' => \GuzzleHttp\MessageFormatter::CLF, // Not mandatory. For more information: https://github.com/guzzle/guzzle/blob/master/src/MessageFormatter.php
     ]
 ];
 ```
@@ -71,7 +71,7 @@ $adapter = [
     'adapter' => 'filesystem',
     'options' => [
         'dirPath' => '/path/to/log/folder',
-        'template' => \GuzzleHttp\MessageFormatter::CLF, // Not required. For more information: https://github.com/guzzle/guzzle/blob/master/src/MessageFormatter.php
+        'template' => \GuzzleHttp\MessageFormatter::CLF, // Not mandatory. For more information: https://github.com/guzzle/guzzle/blob/master/src/MessageFormatter.php
     ]
 ];
 ```
@@ -84,7 +84,7 @@ $adapter = [
     'adapter' => 'filesystem',
     'options' => [
         'filePath' => '/path/to/log/file.log',
-        'template' => \GuzzleHttp\MessageFormatter::CLF, // Not required. For more information: https://github.com/guzzle/guzzle/blob/master/src/MessageFormatter.php
+        'template' => \GuzzleHttp\MessageFormatter::CLF, // Not mandatory. For more information: https://github.com/guzzle/guzzle/blob/master/src/MessageFormatter.php
     ]
 ];
 ```
