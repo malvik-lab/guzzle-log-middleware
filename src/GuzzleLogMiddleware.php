@@ -4,7 +4,7 @@ namespace GuzzleLogMiddleware;
 
 class GuzzleLogMiddleware {
     const NAME = 'GUZZLE LOG MIDDLEWARE';
-    const VERSION = '0.0.1';
+    const VERSION = '0.0.2';
 
     private $adapters = [];
 
