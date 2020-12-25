@@ -49,7 +49,17 @@ class FileSystem extends \GuzzleLogMiddleware\Adapter\AbstractAdapter {
                 break;
 
             case !is_null($this->options['filePath']):
-                $content .= "\n\n\n\n\n\n============================================================================================================\n\n\n\n\n\n";
+                switch($this->options['template'])
+                {
+                    case \GuzzleHttp\MessageFormatter::DEBUG:
+                        $content .= "\n\n\n\n\n\n============================================================================================================\n\n\n\n\n\n";
+                        break;
+
+                    default:
+                        $content .= "\n";
+                        break;
+                }
+
                 file_put_contents($this->options['filePath'], $content, FILE_APPEND);
                 break;
         }
