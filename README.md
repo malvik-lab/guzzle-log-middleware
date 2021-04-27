@@ -6,7 +6,7 @@ Log every request and response of your [Guzzle client](https://github.com/guzzle
   
  ## Installation
 ```
-$ composer require daunoanove/guzzle-log-middleware
+$ composer require malvik-lab/guzzle-log-middleware
 ```
 
 ## Prepare
