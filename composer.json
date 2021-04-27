@@ -1,5 +1,5 @@
 {
-    "name": "daunoanove/guzzle-log-middleware",
+    "name": "malvik-lab/guzzle-log-middleware",
     "description": "Log every request and response of your Guzzle client. You can set different adapters according to your needs.",
     "keywords": ["psr3", "psr6", "guzzle", "log", "logging", "laminas", "redis"],
     "license": "MIT",
