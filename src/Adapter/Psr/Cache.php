@@ -1,8 +1,8 @@
 <?php
 
-namespace GuzzleLogMiddleware\Adapter\Psr;
+namespace MalvikLab\GuzzleLogMiddleware\Adapter\Psr;
 
-class Cache extends \GuzzleLogMiddleware\Adapter\AbstractAdapter {
+class Cache extends \MalvikLab\GuzzleLogMiddleware\Adapter\AbstractAdapter {
     public function defaultTemplate(): string
     {
         return \GuzzleHttp\MessageFormatter::DEBUG;

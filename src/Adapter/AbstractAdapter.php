@@ -1,6 +1,11 @@
 <?php
 
-namespace GuzzleLogMiddleware\Adapter;
+namespace MalvikLab\GuzzleLogMiddleware\Adapter;
+
+use MalvikLab\GuzzleLogMiddleware\Normalize\Adapter\Options;
+use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
+use GuzzleHttp\MessageFormatter;
 
 abstract class AbstractAdapter implements AdapterInterface {
     public $adapter;
@@ -9,7 +14,7 @@ abstract class AbstractAdapter implements AdapterInterface {
     function __construct($adapter, array $options = [])
     {
         $this->adapter = $adapter;
-        $this->options = \GuzzleLogMiddleware\Normalize\Adapter\Options::normalize($options);
+        $this->options = Options::normalize($options);
 
         if ( is_null($this->options['template']) )
         {
@@ -17,8 +22,8 @@ abstract class AbstractAdapter implements AdapterInterface {
         }
     }
 
-    public function prepareContent(\Psr\Http\Message\RequestInterface $request, \Psr\Http\Message\ResponseInterface $response): string
+    public function prepareContent(RequestInterface $request, ResponseInterface $response): string
     {
-        return (new \GuzzleHttp\MessageFormatter($this->options['template']))->format($request, $response);
+        return (new MessageFormatter($this->options['template']))->format($request, $response);
     }
 }

@@ -1,8 +1,8 @@
 <?php
 
-namespace GuzzleLogMiddleware\Adapter;
+namespace MalvikLab\GuzzleLogMiddleware\Adapter;
 
-class FileSystem extends \GuzzleLogMiddleware\Adapter\AbstractAdapter {
+class FileSystem extends \MalvikLab\GuzzleLogMiddleware\Adapter\AbstractAdapter {
     function __construct($adapter, array $options = [])
     {
         parent::__construct($adapter, $options);
@@ -10,7 +10,7 @@ class FileSystem extends \GuzzleLogMiddleware\Adapter\AbstractAdapter {
         if ( is_null($this->options['dirPath']) AND is_null($this->options['filePath']) )
         {
             throw new Exception\FileSystem(
-                \GuzzleLogMiddleware\Util\Util::exception(__FUNCTION__, 'Set at least the "dirPath" or "filePath"')
+                \MalvikLab\GuzzleLogMiddleware\Util\Util::exception(__FUNCTION__, 'Set at least the "dirPath" or "filePath"')
             );
         }
 
@@ -22,7 +22,7 @@ class FileSystem extends \GuzzleLogMiddleware\Adapter\AbstractAdapter {
             if ( !is_writable($this->options['dirPath']) )
             {
                 throw new Exception\FileSystem(
-                    \GuzzleLogMiddleware\Util\Util::exception(__FUNCTION__, sprintf('Destination folder "%s" is not writable', $this->options['dirPath']))
+                    \MalvikLab\GuzzleLogMiddleware\Util\Util::exception(__FUNCTION__, sprintf('Destination folder "%s" is not writable', $this->options['dirPath']))
                 );
             }
         }

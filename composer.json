@@ -12,7 +12,7 @@
     ],
 	"autoload": {
         "psr-4": {
-            "GuzzleLogMiddleware\\": "src/"
+            "MalvikLab\\GuzzleLogMiddleware\\": "src/"
         }
     },
     "require": {
@@ -22,7 +22,11 @@
         "guzzlehttp/guzzle": "^7.0"
     },
     "require-dev": {
-        "phpunit/phpunit": "*"
+        "phpunit/phpunit": "^9.5",
+        "laminas/laminas-log": "2.14.x-dev",
+        "laminas/laminas-cache": "3.0.x-dev",
+        "laminas/laminas-serializer": "2.11.x-dev",
+        "symfony/filesystem": "5.x-dev"
     },
     "minimum-stability": "dev"
 }

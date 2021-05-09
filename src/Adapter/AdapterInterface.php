@@ -1,9 +1,12 @@
 <?php
 
-namespace GuzzleLogMiddleware\Adapter;
+namespace MalvikLab\GuzzleLogMiddleware\Adapter;
+
+use Psr\Http\Message\RequestInterface;
+use Psr\Http\Message\ResponseInterface;
 
 interface AdapterInterface {
     public function defaultTemplate(): string;
 
-    public function save(\Psr\Http\Message\RequestInterface $request, \Psr\Http\Message\ResponseInterface $response): void;
+    public function save(RequestInterface $request, ResponseInterface $response): void;
 }

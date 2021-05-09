@@ -1,6 +1,6 @@
 <?php
 
-namespace GuzzleLogMiddleware\Normalize\Adapter;
+namespace MalvikLab\GuzzleLogMiddleware\Normalize\Adapter;
 
 class Options {
     public static function normalize(array $options): array
