@@ -7,13 +7,15 @@ use MalvikLab\GuzzleLogMiddleware\Normalize\AdapterAndOptions;
 use MalvikLab\GuzzleLogMiddleware\Adapter\Psr\Cache as CacheAdapter;
 use MalvikLab\GuzzleLogMiddleware\Adapter\Psr\Log as LogAdapter;
 use MalvikLab\GuzzleLogMiddleware\Adapter\FileSystem as FileSystemAdapter;
+use MalvikLab\GuzzleLogMiddleware\Util\Util;
 use Psr\Cache\CacheItemPoolInterface;
 use Psr\Log\LoggerInterface;
+use Psr\Http\Message\RequestInterface;
 
 class GuzzleLogMiddleware {
     const NAME = 'GUZZLE LOG MIDDLEWARE';
     const VERSION = '1.0.0';
-    
+
     private $adapters = [];
 
     function __construct(array $adaptersAndOptions = [])
@@ -21,7 +23,7 @@ class GuzzleLogMiddleware {
         if ( count($adaptersAndOptions) < 1 )
         {
             throw new GuzzleLogMiddlewareException(
-                Util\Util::exception(__FUNCTION__, 'No one adapter set')
+                Util::exception(__FUNCTION__, 'No one adapter set')
             );
         }
 
@@ -45,7 +47,7 @@ class GuzzleLogMiddleware {
 
                 default:
                     throw new GuzzleLogMiddlewareException(
-                        Util\Util::exception(__FUNCTION__, sprintf('Invalid adapter "%s"', $adapterAndOptions['adapter']))
+                        Util::exception(__FUNCTION__, sprintf('Invalid adapter "%s"', $adapterAndOptions['adapter']))
                     );
                     break;
             }
@@ -54,7 +56,7 @@ class GuzzleLogMiddleware {
 
     public function __invoke(callable $handler)
     {
-        return function (\Psr\Http\Message\RequestInterface $request, array $options) use ($handler) {
+        return function (RequestInterface $request, array $options) use ($handler) {
             $promise = $handler($request, $options);
             return $promise->then(
                 function ($response) use ($request) {
