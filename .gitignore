@@ -1,3 +1,4 @@
-vendor/*
-src/data/*
+.idea
 composer.lock
+vendor
+src/data
