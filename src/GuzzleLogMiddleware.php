@@ -14,7 +14,7 @@ use Psr\Http\Message\RequestInterface;
 
 class GuzzleLogMiddleware {
     const NAME = 'GUZZLE LOG MIDDLEWARE';
-    const VERSION = '1.0.0';
+    const VERSION = '1.0.1';
 
     private $adapters = [];
 
