@@ -28,5 +28,5 @@
         "laminas/laminas-serializer": "2.11.x-dev",
         "symfony/filesystem": "5.x-dev"
     },
-    "minimum-stability": "dev"
+    "minimum-stability": "stable"
 }
