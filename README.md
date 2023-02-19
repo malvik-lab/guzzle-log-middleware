@@ -3,6 +3,7 @@ Log every request and response of your [Guzzle client](https://github.com/guzzle
   - [PSR-3 Logger Interface](https://www.php-fig.org/psr/psr-3)
   - [PSR-6 Caching Interface](https://www.php-fig.org/psr/psr-6)
   - Filesystem
+  - Custom adapter
   
  ## Installation
 ```
