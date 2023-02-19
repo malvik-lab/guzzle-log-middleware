@@ -2,6 +2,7 @@
 
 namespace MalvikLab\GuzzleLogMiddleware;
 
+use MalvikLab\GuzzleLogMiddleware\Adapter\AdapterInterface;
 use MalvikLab\GuzzleLogMiddleware\Exception\GuzzleLogMiddlewareException;
 use MalvikLab\GuzzleLogMiddleware\Normalize\AdapterAndOptions;
 use MalvikLab\GuzzleLogMiddleware\Adapter\Psr\Cache as CacheAdapter;
@@ -14,7 +15,7 @@ use Psr\Http\Message\RequestInterface;
 
 class GuzzleLogMiddleware {
     const NAME = 'GUZZLE LOG MIDDLEWARE';
-    const VERSION = '1.0.1';
+    const VERSION = '1.0.2';
 
     private $adapters = [];
 
@@ -43,6 +44,10 @@ class GuzzleLogMiddleware {
 
                 case 'filesystem' === $adapterAndOptions['adapter']:
                     $this->adapters[] = new FileSystemAdapter($adapterAndOptions['adapter'], $adapterAndOptions['options']);
+                    break;
+
+                case $adapterAndOptions['adapter'] instanceof AdapterInterface:
+                    $this->adapters[] = $adapterAndOptions['adapter'];
                     break;
 
                 default:
